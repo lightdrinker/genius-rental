@@ -1,15 +1,49 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>더 지니어스 렌탈 서비스</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script defer src="/config.js"></script>
-    <script defer src="/games.js"></script>
-    <script defer src="/app.js"></script>
-  </head>
-  <body>
-    <p>사이트 파일을 배포 중입니다. 완전한 index는 Vercel 살성 사이트와 같습니다.</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>더 지니어스 렌탈 서비스</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/config.js"></script>
+  <script defer src="/games.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <p class="eyebrow">Board Game Club</p>
+        <h1>더 지니어스 렌탈 서비스</h1>
+      </div>
+      <span id="pill" class="pill">연결 확인 중</span>
+    </header>
+    <nav>
+      <button id="btnBorrow" type="button">대여</button>
+      <button id="btnReturn" type="button">반납</button>
+      <button id="btnStatus" type="button">현황</button>
+    </nav>
+    <main>
+      <section id="viewBorrow">
+        <h2>게임 대여</h2>
+        <input id="borrowerName" placeholder="이름 (2글자 이상)" />
+        <div id="gameList" class="list"></div>
+        <button id="borrowSubmit" class="primary" type="button">이 게임 빌리기</button>
+      </section>
+      <section id="viewReturn" hidden>
+        <h2>게임 반납</h2>
+        <input id="returnSearch" placeholder="이름 또는 게임명" />
+        <div id="returnList" class="list"></div>
+        <input id="returnerName" placeholder="빌릴 때 쓴 이름" />
+        <button id="returnSubmit" class="primary" type="button">반납 완료</button>
+      </section>
+      <section id="viewStatus" hidden>
+        <h2>대여 현황</h2>
+        <p id="metrics"></p>
+        <div id="boardList" class="list"></div>
+      </section>
+    </main>
+    <p id="toast" class="toast" hidden></p>
+  </div>
+</body>
 </html>
