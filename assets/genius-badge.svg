@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="더 지니어스 보드게임 클럽">
+  <rect width="240" height="240" rx="28" fill="#17120D"/>
+  <rect x="18" y="18" width="204" height="204" rx="20" fill="#F7B91E"/>
+  <rect x="38" y="38" width="164" height="164" rx="16" fill="#FFF8E6"/>
+  <circle cx="86" cy="96" r="10" fill="#17120D"/>
+  <circle cx="154" cy="96" r="10" fill="#EF463C"/>
+  <circle cx="120" cy="132" r="10" fill="#2F6BDC"/>
+  <circle cx="86" cy="168" r="10" fill="#17120D"/>
+  <circle cx="154" cy="168" r="10" fill="#EF463C"/>
+</svg>
