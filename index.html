@@ -610,13 +610,14 @@ async function loadData() {
       sb("/games?select=id,name,description,sort_order,is_active&is_active=eq.true&order=sort_order.asc"),
       sb("/rentals?select=id,borrower_name,game_id,borrowed_at,due_date,returned_at&order=borrowed_at.desc")
     ]);
-    const localById = Object.fromEntries(INITIAL_GAMES.map(g => [g.id, g]));
-    state.games = (remoteGames.length ? remoteGames : INITIAL_GAMES).map(g => {
-      const local = localById[g.id] || {};
+    const remoteById = Object.fromEntries((remoteGames || []).map(g => [g.id, g]));
+    // Always start from the full local catalog (13 games). Overlay remote name/desc when present.
+    state.games = INITIAL_GAMES.map(local => {
+      const remote = remoteById[local.id] || {};
       return {
-        id: g.id,
-        name: g.name || local.name || g.id,
-        desc: g.description || local.desc || "",
+        id: local.id,
+        name: remote.name || local.name,
+        desc: remote.description || local.desc || "",
         category: local.category || "전략·경쟁",
         players: local.players || "2~6인",
         time: local.time || "30분",
